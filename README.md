@@ -8,6 +8,7 @@ cd jenkins-slave
 # set registry variable to openshift docker registry url
 # usually it's docker-registry-default.$OCSUBDOMAIN
 # if using oc cluster up, it's docker-registry-default.127.0.0.1.nip.io
+docker login -u $(oc whoami) -p $(oc whoami -t) $OC-REGISTRY
 ./build.sh # build slave image
 cd ../ # return to project root
 
