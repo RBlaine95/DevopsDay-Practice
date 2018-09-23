@@ -1,24 +1,29 @@
 pipeline {
-    agent any 
+    agent {label 'builder'}
     stages {
+        stage('Checkout') {
+          steps {
+            checkout scm
+          }
+        }
         stage('Stage 1') {
             steps {
-                echo 'Hello world!' 
+                echo 'Hello world!'
             }
         }
         stage('Stage 2') {
             steps {
-                echo 'Hello world back!' 
+                echo 'Hello world back!'
             }
         }
         stage('Stage 3') {
             steps {
-                echo 'Something!' 
+                echo 'Something!'
             }
         }
         stage('Stage 4') {
             steps {
-                echo 'Testing 4!' 
+                echo 'Testing 4!'
             }
         }
     }
