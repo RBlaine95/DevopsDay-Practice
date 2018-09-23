@@ -1,6 +1,6 @@
 # https://blog.openshift.com/openshift-pipelines-jenkins-blue-ocean/
 # https://github.com/siamaksade/cart-service/blob/master/openshift/cart-pipeline.yaml
-# https://github.com/siamaksade/openshift-cd-demo/tree/origin-3.6
+# https://github.com/siamaksade/openshift-cd-demo
 apiVersion: v1
 kind: BuildConfig
 metadata:
@@ -21,5 +21,5 @@ spec:
       jenkinsfilePath: Jenkinsfile # Jenkinsfile directory relative to project root - CASE SENSITIVE
   triggers:
   - github:
-      secret: supersecretplaintextwebhook # https://docs.openshift.org/latest/dev_guide/builds/triggering_builds.html#bitbucket-webhooks
+      secret: supersecretplaintextwebhook # https://docs.okd.io/latest/dev_guide/builds/triggering_builds.html#github-webhooks
     type: GitHub
