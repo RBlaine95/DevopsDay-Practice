@@ -12,7 +12,7 @@ cd jenkins-slave
 cd ../
 
 ssh-keygen -f id_rsa # generate clean ssh keys in current dir
-# don't forget to add these keys to repository deploy keys
+# if needed, don't forget to add the pub keys to git deploy keys
 
 oc create secret generic \
   git-deploy-key \
@@ -24,6 +24,9 @@ oc start build example-pipeline # start build
 ```  
 
 ### Required resources?
-An OpenShift/OKD Cluster and the [oc cli](https://www.okd.io/download.html#oc-platforms).
+An OpenShift/OKD Cluster and the [oc cli](https://www.okd.io/download.html#oc-platforms).  
+For further information, consider some OKD [docs](https://github.com/openshift/origin/tree/master/examples/jenkins/pipeline).
 
-For further information, consider the OKD [docs](https://github.com/openshift/origin/tree/master/examples/jenkins/pipeline).
+
+### Screenshots
+![OKD Pipeline Build UI](screenshots/okd-pipeline-screen.png)
